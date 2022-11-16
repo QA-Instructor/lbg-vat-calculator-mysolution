@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   tools {
-    sonarqube
+    sonarqube "sonarqube"
   }
   stages {
     stage('Checkout') {
