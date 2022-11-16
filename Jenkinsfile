@@ -8,13 +8,19 @@ pipeline {
           git branch: 'main', url: 'https://github.com/QA-Instructor/lbg-vat-calculator.git'
         }
     }
+    // stage('SonarQube Analysis') {
+    //     steps {
+    //       def scannerHome = tool 'sonarqube';
+    //       withSonarQubeEnv() {
+    //         sh "${scannerHome}/bin/sonar-scanner"
+    //       }
+    //     }
+    // }
     stage('SonarQube Analysis') {
-        steps {
-          def scannerHome = tool 'sonarqube';
-          withSonarQubeEnv() {
-            sh "${scannerHome}/bin/sonar-scanner"
-          }
-        }
+      def scannerHome = tool 'sonarqube';
+      withSonarQubeEnv() {
+        sh "${scannerHome}/bin/sonar-scanner"
     }
+  }
 }
 }
