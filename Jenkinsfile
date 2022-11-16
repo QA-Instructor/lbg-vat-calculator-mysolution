@@ -9,9 +9,12 @@ pipeline {
         }
     }
     stage('SonarQube Analysis') {
+      environment {
+        scannerHome = tool 'sonarqube'
+      }
         steps {
             withSonarQubeEnv('sonar-qube-1') {        
-              sh "sonarqube:sonar"
+              sh "${scannerHome}/bin/sonar-scanner"
         }
     }
   }
