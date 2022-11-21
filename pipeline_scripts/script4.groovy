@@ -1,5 +1,5 @@
 // This adds a quality gate that aborts the pipeline if the quality threshold isn't met
-// This adds a test stage
+// This adds an npm install and test stage
 pipeline {
   agent any
 
@@ -23,6 +23,12 @@ pipeline {
         }
     }
   }
+  stage('Install') {
+        steps {
+          // RInstall the ReactJS dependencies
+          sh "npm install"
+        }
+    }
      stage('Test') {
         steps {
           // Run the ReactJS tests
