@@ -23,6 +23,12 @@ pipeline {
         }
     }
   }
+  stage('Install') {
+        steps {
+          // RInstall the ReactJS dependencies
+          sh "npm install"
+        }
+    }
      stage('Test') {
         steps {
           // Run the ReactJS tests
