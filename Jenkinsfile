@@ -35,11 +35,5 @@ pipeline {
           sh "npm test"
         }
     }
-     stage('Build') {
-        steps {
-          // Build the ReactJS Application
-          sh "npm run build"
-        }
-    }
 }
 }

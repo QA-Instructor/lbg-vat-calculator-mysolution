@@ -35,11 +35,13 @@ pipeline {
           sh "npm test"
         }
     }
-     stage('Build') {
-        steps {
-          // Build the ReactJS Application
-          sh "npm run build"
-        }
-    }
+    // You could build the app but you need a webserver to serve it
+    //
+    //  stage('Build') {
+    //     steps {
+    //       // Build the ReactJS Application
+    //       sh "npm run build"
+    //     }
+    // }
 }
 }
